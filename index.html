@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BX AE Toolbox 최종 사용자 가이드 · Light</title>
+  <style>
+    @font-face{font-family:"Noto Sans KR";src:url("guide_assets/fonts/NotoSansKR-VF.ttf") format("truetype");font-style:normal;font-weight:100 900;font-display:swap}
+    :root{--bg:#111315;--side:#17191c;--surface:#1d2024;--panel:#24282d;--line:#353b42;--text:#f3f5f7;--muted:#aab1ba;--blue:#2f8ef3;--green:#55d77b;--yellow:#ffc34d;--red:#ef747b;--nav:220px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:"Malgun Gothic","Noto Sans KR",Arial,sans-serif;font-size:15px;line-height:1.65;letter-spacing:0}.layout{display:grid;grid-template-columns:var(--nav) minmax(0,1fr);min-height:100vh}.sidebar{position:sticky;top:0;height:100vh;padding:18px 13px;background:var(--side);border-right:1px solid var(--line);overflow:auto}.brand{display:flex;align-items:center;gap:10px;padding:4px 7px 20px}.brand-mark{display:grid;place-items:center;width:38px;height:38px;border-radius:5px;background:var(--blue);font-weight:900}.brand strong,.brand small{display:block}.brand small{color:var(--muted);font-size:11px}.nav-label{margin:12px 8px 6px;color:#737c86;font-size:11px;font-weight:800}.nav a{display:flex;align-items:center;gap:9px;margin:2px 0;padding:9px;border:1px solid transparent;border-radius:5px;color:var(--muted);text-decoration:none}.nav a:hover,.nav a.active{color:#fff;background:var(--panel);border-color:var(--line)}.nav b{display:grid;place-items:center;width:26px;height:26px;border-radius:4px;background:#2b2f34;font-size:12px}.nav a.active b{background:var(--blue)}.main{min-width:0}.topbar{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;gap:20px;padding:12px clamp(18px,4vw,48px);background:rgba(17,19,21,.96);border-bottom:1px solid var(--line)}.topbar span{color:var(--muted);font-size:12px}.content{max-width:1280px;margin:auto;padding:34px clamp(18px,4vw,48px) 90px}.hero{padding:10px 0 38px;border-bottom:1px solid var(--line)}.eyebrow{display:inline-block;padding:3px 8px;border-radius:3px;background:#16395f;color:#9acbff;font-size:11px;font-weight:800}h1{max-width:800px;margin:12px 0;font-size:clamp(32px,4.5vw,54px);line-height:1.12}h2{margin:0;font-size:27px}h3{margin:0 0 8px;font-size:18px}.lead{max-width:780px;color:var(--muted);font-size:17px}.tool-map{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}.tool-map a{padding:14px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:#fff;text-decoration:none}.tool-map b{display:block;margin-bottom:2px}.tool-map small{color:var(--muted)}.primary-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}.flow{position:relative;padding:13px;border:1px solid var(--line);border-radius:5px;background:var(--surface)}.flow b{display:block;color:var(--blue);font-size:12px}.flow:not(:last-child):after{content:"→";position:absolute;right:-8px;top:50%;z-index:2;color:var(--blue)}section{padding-top:58px}.section-head{display:flex;gap:13px;align-items:flex-start;margin-bottom:22px}.num{display:grid;place-items:center;flex:0 0 36px;height:36px;border-radius:50%;background:var(--blue);font-weight:900}.section-head p{margin:3px 0 0;color:var(--muted)}.step-block{margin:0 0 34px}.step-title{display:flex;align-items:center;gap:10px;margin-bottom:12px}.step-title b{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--yellow);color:#111}.guide-grid{display:grid;grid-template-columns:minmax(350px,520px) minmax(300px,1fr);gap:24px;align-items:start}.shot{margin:0;padding:9px;background:#090a0b;border:1px solid var(--line);border-radius:7px}.shot img{display:block;width:100%;height:auto;border-radius:3px;cursor:zoom-in}.shot figcaption{display:flex;justify-content:space-between;gap:8px;padding:8px 3px 1px;color:var(--muted);font-size:11px}.actions{display:flex;flex-direction:column;gap:10px}.action{display:grid;grid-template-columns:28px 1fr;gap:10px;padding:13px;border:1px solid var(--line);border-radius:5px;background:var(--surface)}.action em{display:grid;place-items:center;width:27px;height:27px;border-radius:50%;background:#2b5f96;color:#fff;font-style:normal;font-weight:800}.action strong{display:block;margin-bottom:2px}.action p{margin:0;color:var(--muted);font-size:13px}.status,.note,.warning{padding:12px 13px;border-radius:5px}.status{border:1px solid #2e6c42;background:#15291d;color:#bce9c9}.note{border-left:3px solid var(--blue);background:#172534;color:#bedcff}.warning{border-left:3px solid var(--yellow);background:#282316;color:#efd99f}.danger{border-left-color:var(--red);background:#2a1b1d;color:#f1c0c3}.chips{display:flex;flex-wrap:wrap;gap:6px}.chip{padding:4px 8px;border:1px solid var(--line);border-radius:4px;background:var(--panel);color:var(--muted);font-size:11px}.chip.good{border-color:#2c6b41;background:#17301f;color:#b7ecc5}.video{margin:24px 0 6px;padding:15px;border:1px solid var(--line);border-radius:7px;background:var(--surface)}.video p{margin:0 0 12px;color:var(--muted);font-size:13px}.video video{display:block;width:100%;max-height:720px;background:#070809;border:1px solid #3a4047;border-radius:5px}.video small{display:block;margin-top:8px;color:#7f8994}.mini-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}.mini-grid figure{margin:0;padding:8px;border:1px solid var(--line);border-radius:6px;background:#090a0b}.mini-grid img{display:block;width:100%;cursor:zoom-in}.mini-grid figcaption{padding:7px 2px 1px;color:var(--muted);font-size:12px}.state-table{width:100%;border-collapse:collapse;margin-top:12px}.state-table th,.state-table td{padding:10px 12px;border:1px solid var(--line);text-align:left}.state-table th{background:#23272c}.state-table td{color:var(--muted)}.faq{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.faq article{padding:15px;border:1px solid var(--line);border-radius:6px;background:var(--surface)}.faq p{margin:5px 0 0;color:var(--muted)}.footer{padding-top:58px;color:#727b85;font-size:12px}.lightbox{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(0,0,0,.9)}.lightbox.open{display:flex}.lightbox img{max-width:96vw;max-height:94vh;object-fit:contain;border:1px solid #555}.lightbox button{position:absolute;right:20px;top:16px;width:40px;height:40px;border:1px solid #666;border-radius:50%;background:#191b1e;color:#fff;font-size:22px;cursor:pointer}
+    @media(max-width:980px){.guide-grid{grid-template-columns:1fr}.shot{max-width:560px}.tool-map{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:760px){.layout{grid-template-columns:72px minmax(0,1fr)}.sidebar{padding:12px 7px}.brand{justify-content:center}.brand div:last-child,.nav-label,.nav a span{display:none}.nav a{justify-content:center}.primary-flow{grid-template-columns:1fr}.flow:after{display:none}.faq{grid-template-columns:1fr}}
+    @media(max-width:540px){.layout{display:block}.sidebar{position:fixed;left:0;right:0;top:auto;bottom:0;z-index:30;width:auto;height:62px;padding:5px;border:0;border-top:1px solid var(--line)}.brand,.nav-label{display:none}.nav{display:grid;grid-template-columns:repeat(7,1fr);overflow-x:auto}.nav a{padding:7px 2px}.main{padding-bottom:62px}.topbar{position:static}.topbar span{display:none}.tool-map,.mini-grid{grid-template-columns:1fr}.content{padding-top:24px}}
+    /* Panel screenshot crops: full originals remain available in the lightbox. */
+    .panel-crop{object-fit:cover;object-position:top}.crop-create{aspect-ratio:400/730}.crop-motion{aspect-ratio:400/850}.crop-brand{aspect-ratio:400/700}.crop-comp{aspect-ratio:400/260}.crop-collect{aspect-ratio:400/130}.crop-resize{aspect-ratio:612/300}.crop-organize{aspect-ratio:400/210}.crop-resize-result{aspect-ratio:612/300}
+    /* Typography and alignment system */
+    body,button,input,select,textarea{font-family:"Noto Sans KR","Noto Sans CJK KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-synthesis:none}
+    body{font-weight:400}strong,b,h1,h2,h3{font-weight:700}.brand,.nav a,.topbar,.section-head,.step-title,.shot figcaption{align-items:center}.brand-mark,.nav b,.num,.step-title b,.action em{flex:none;line-height:1;text-align:center}.brand-mark{font-size:15px}.brand strong{line-height:1.3}.brand small{margin-top:2px;line-height:1.35}.nav a{min-height:46px}.nav a span{min-width:0;line-height:1.35}.nav b{font-variant-numeric:tabular-nums}.topbar strong,.topbar span{line-height:1.4}.tool-map a{display:flex;min-height:78px;flex-direction:column;justify-content:center}.tool-map b,.tool-map small{line-height:1.45}.primary-flow{align-items:stretch}.flow{display:flex;min-height:72px;flex-direction:column;justify-content:center}.flow b,.flow span{line-height:1.4}.section-head{min-height:44px}.section-head h2{line-height:1.3}.section-head p{line-height:1.5}.num{font-variant-numeric:tabular-nums}.step-title{min-height:34px}.step-title h3{margin:0;line-height:1.35}.guide-grid{align-items:start}.action{align-items:start}.action em{margin-top:1px}.action strong{line-height:1.45}.action p{line-height:1.65}.shot figcaption{min-height:34px}.chips{align-items:center}.chip{display:inline-flex;align-items:center;min-height:27px;line-height:1.3}.status,.note,.warning{line-height:1.65}.faq h3{line-height:1.45}
+    /* Light edition */
+    :root{--bg:#f5f6f8;--side:#ffffff;--surface:#ffffff;--panel:#edf0f3;--line:#d5dae0;--text:#1b1e22;--muted:#626b75;--blue:#1676dd;--green:#238b4c;--yellow:#e5a51b;--red:#c84d57}
+    body{background:var(--bg);color:var(--text)}
+    .sidebar{background:#fff;box-shadow:3px 0 14px rgba(32,42,52,.05)}
+    .brand-mark{color:#fff}.nav a:hover,.nav a.active{color:#15191d;background:#eef4fb;border-color:#cbd9e8}.nav b{background:#e9edf1;color:#4c5661}.nav a.active b{background:var(--blue);color:#fff}
+    .topbar{background:rgba(255,255,255,.95);box-shadow:0 2px 10px rgba(31,42,54,.04)}
+    .eyebrow{background:#e4f1ff;color:#176abf}.tool-map a,.flow,.action,.video,.faq article{background:#fff;color:#1b1e22;box-shadow:0 3px 12px rgba(34,45,58,.035)}
+    .shot,.mini-grid figure{background:#e8ebef;border-color:#ccd2d9}.shot img,.mini-grid img{background:#1d1f22}
+    .chip{background:#f0f2f5}.chip.good{background:#e5f5ea;color:#217542;border-color:#a9d8b8}
+    .action em{background:#dbeaff;color:#1466ba}.status{background:#e9f6ed;color:#246c3b;border-color:#b6ddc1}.note{background:#eaf4ff;color:#235e94}.warning{background:#fff7e3;color:#735715}.danger{background:#fff0f1;color:#8f343c}
+    .state-table th{background:#e9edf1}.lightbox{background:rgba(20,24,29,.9)}.lightbox button{background:#fff;color:#1d2228}
+    .footer{color:#7a838d}
+    /* Fixed section number circles */
+    .section-head{display:grid;grid-template-columns:36px minmax(0,1fr);gap:13px;align-items:center}.section-head .num{display:flex;align-items:center;justify-content:center;width:36px;min-width:36px;max-width:36px;height:36px;min-height:36px;max-height:36px;overflow:hidden;aspect-ratio:1;border-radius:999px;flex:none}
+    code{display:inline-block;margin:0 2px;padding:2px 6px;border:1px solid #c9d7e6;border-radius:4px;background:#edf5fd;color:#155fae;font-family:"Noto Sans KR","Malgun Gothic",sans-serif;font-size:.92em;font-weight:700;line-height:1.35;vertical-align:baseline;white-space:normal}
+    .resize-example-crop{width:100%;aspect-ratio:612/300;object-fit:cover;object-position:top}
+    /* Feature navigation interaction */
+    .tool-map a{position:relative;z-index:0;transform:translateZ(0) scale(1);transform-origin:center;transition:transform .2s ease,background-color .2s ease,border-color .2s ease,color .2s ease,box-shadow .2s ease}.tool-map a small{transition:color .2s ease}.tool-map a:hover,.tool-map a:focus-visible{z-index:1;background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 10px 24px rgba(22,118,221,.25);transform:translateY(-3px) scale(1.025);outline:none}.tool-map a:hover small,.tool-map a:focus-visible small{color:#e8f3ff}.tool-map a:active{transform:translateY(0) scale(.985);box-shadow:0 4px 10px rgba(22,118,221,.2);transition-duration:.08s}
+    @media(hover:none){.tool-map a:hover{background:#fff;border-color:var(--line);color:var(--text);box-shadow:0 3px 12px rgba(34,45,58,.035);transform:none}.tool-map a:hover small{color:var(--muted)}}
+    @media(prefers-reduced-motion:reduce){.tool-map a,.tool-map a small{transition:none}.tool-map a:hover,.tool-map a:focus-visible,.tool-map a:active{transform:none}}
+    /* Source organization map */
+    .folder-map{display:grid;gap:10px;padding:14px;border:1px solid var(--line);border-radius:6px;background:#fff}.folder-root{display:flex;align-items:center;gap:8px;font-weight:800}.folder-root:before,.folder-name:before{content:"";display:inline-block;width:14px;height:10px;border-radius:2px;background:#f1b83b;box-shadow:0 -3px 0 -1px #d89b24}.folder-branch{margin-left:7px;padding-left:18px;border-left:2px solid #d8e1eb}.folder-group{position:relative;margin:8px 0}.folder-group:before{content:"";position:absolute;left:-20px;top:13px;width:14px;border-top:2px solid #d8e1eb}.folder-name{display:inline-flex;align-items:center;gap:8px;padding:5px 9px;border-radius:4px;background:#eef5fd;color:#155fae;font-weight:800}.folder-name.sub{background:#f0f2f5;color:#4f5964}.folder-items{display:grid;gap:6px;margin:8px 0 0 22px}.folder-item{display:grid;grid-template-columns:minmax(72px,110px) minmax(0,1fr);gap:10px;align-items:start;padding:7px 9px;border-left:3px solid #a8ccef;background:#f7faff}.folder-item b{color:#155fae;font-size:12px}.folder-item span{color:var(--muted);font-size:12px;line-height:1.5}.folder-item code{padding:1px 4px;border-radius:3px;background:#e7eef6;color:#34495e;font-family:inherit;font-size:11px}.folder-legend{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}.folder-legend span{padding:4px 7px;border:1px solid #d7e0e9;border-radius:4px;background:#f7f8fa;color:#59636e;font-size:11px}@media(max-width:620px){.folder-map{padding:11px}.folder-branch{padding-left:14px}.folder-group:before{left:-16px;width:10px}.folder-items{margin-left:12px}.folder-item{grid-template-columns:1fr;gap:2px}}
+  </style>
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark">BX</div><div><strong>AE Toolbox</strong><small>최종 사용자 가이드</small></div></div>
+    <div class="nav-label">기능</div>
+    <nav class="nav" id="nav">
+      <a href="#overview" class="active"><b>0</b><span>한눈에 보기</span></a>
+      <a href="#slot"><b>1</b><span>슬롯 만들기</span></a>
+      <a href="#brand"><b>2</b><span>로고/문구</span></a>
+      <a href="#comp"><b>3</b><span>컴프 설정</span></a>
+      <a href="#collect"><b>4</b><span>콜렉트</span></a>
+      <a href="#resize"><b>5</b><span>리사이즈</span></a>
+      <a href="#organize"><b>6</b><span>소스 정리</span></a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <header class="topbar"><strong>BX AE Toolbox 사용 방법</strong><span>패널 이미지를 클릭하면 크게 볼 수 있습니다.</span></header>
+    <div class="content">
+      <section class="hero" id="overview">
+        <span class="eyebrow">WORKFLOW GUIDE</span>
+        <h1>BX AE TOOLBOX<br></h1>
+        <div class="tool-map">
+          <a href="#slot"><b>슬롯 만들기</b><small>릴 생성 · 회차 결과 · 스핀 모션</small></a>
+          <a href="#brand"><b>로고/문구</b><small>로고와 디스클레이머 일괄 삽입</small></a>
+          <a href="#comp"><b>컴프 설정</b><small>해상도 · FPS · 길이 · 타임코드</small></a>
+          <a href="#collect"><b>콜렉트</b><small>원하는 컴프만 콜렉트</small></a>
+          <a href="#resize"><b>리사이즈</b><small>콘텐츠 기준 컴프 크기 변경</small></a>
+          <a href="#organize"><b>소스 정리</b><small>컴프와 에셋 자동 분류</small></a>
+        </div>
+      </section>
+
+      <section id="slot">
+        <div class="section-head"><div class="num">1</div><div><h2>슬롯 만들기</h2><p>프로젝트 심볼을 선택한 뒤 3단계를 순서대로 완료합니다.</p></div></div>
+        <div class="primary-flow" style="margin-bottom:30px"><div class="flow"><b>STEP 1</b><span> 생성</span></div><div class="flow"><b>STEP 2</b><span> 결과 저장</span></div><div class="flow"><b>STEP 3</b><span>모션 적용</span></div></div>
+
+        <div class="step-block">
+          <div class="step-title"><b>1</b><h3>생성</h3></div>
+          <div class="guide-grid">
+            <figure class="shot"><img class="panel-crop crop-create" src="guide_assets/01_slot_build_01.png" alt="슬롯 만들기 1 생성 패널" data-zoom><figcaption><span>실제 패널 · 1 생성</span><span>클릭해서 확대</span></figcaption></figure>
+            <div class="actions">
+              <div class="chips"><span class="chip good">새 슬롯 제작</span><span class="chip">프로젝트 심볼 선택 필요</span></div>
+          <div class="action"><em>1</em><div><strong>심볼 에셋 선택</strong><p>프로젝트 패널에서 슬롯에 사용할 이미지 또는 프리컴프를 선택합니다. 상단 상태가 초록색 <code>심볼 N개 선택됨</code>으로 바뀌는지 확인합니다.</p></div></div>
+              <div class="action"><em>2</em><div><strong>메인 컴프 설정</strong><p>새 메인 컴프 생성 여부, 컴프명, 가로·세로, 슬롯 길이를 설정합니다. 기존 활성 컴프를 사용할 수도 있습니다.</p></div></div>
+          <div class="action"><em>3</em><div><strong>릴 세부 설정</strong><p>심볼 개수와 릴 컴프 수를 정합니다. <code>심볼 크기 직접 지정</code>을 끄면 5×3 그리드에 맞는 크기와 중심 간격이 자동 계산됩니다.</p></div></div>
+          <div class="action"><em>4</em><div><strong>슬롯 생성</strong><p>파란 <code>슬롯 생성</code> 버튼을 누르면 릴 컴프와 메인 컴프 배치가 함께 만들어집니다.</p></div></div>
+          <div class="status">상단이 <code>✓ 1 생성 완료</code>로 바뀌면 다음 단계로 이동할 수 있습니다.</div>
+          <div class="note">세부 설정이 보이지 않으면 <code>세부 설정 펼치기</code>를 누릅니다. 새 슬롯을 다시 만들 때도 1단계에서 설정을 변경할 수 있습니다.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-block">
+          <div class="step-title"><b>2</b><h3>결과 저장</h3></div>
+          <div class="guide-grid">
+            <figure class="shot"><img src="guide_assets/01_slot_build_02.png" alt="슬롯 만들기 2 결과 저장 패널" data-zoom><figcaption><span>실제 패널 · 2 결과 저장</span><span>클릭해서 확대</span></figcaption></figure>
+            <div class="actions">
+              <div class="action"><em>1</em><div><strong>회차 수와 회차 선택</strong><p>사용할 회차 수를 정하고 1회차부터 선택합니다. 저장된 회차를 클릭하면 별도 보기 버튼 없이 해당 결과가 컴프에 바로 표시됩니다.</p></div></div>
+          <div class="action"><em>2</em><div><strong>결과 만드는 방법 선택</strong><p><code>템플릿으로 N회차 저장</code>은 모양과 심볼을 기준으로 결과를 자동 구성합니다. 직접 릴 Y 위치를 맞췄다면 <code>현재 배치를 N회차로 저장</code>을 사용합니다.</p></div></div>
+          <div class="action"><em>3</em><div><strong>회차별 반복 저장</strong><p>각 회차마다 다른 모양과 심볼을 지정해 저장합니다. 초록색 <code>저장됨</code> 상태가 필요한 회차 모두에 표시되어야 합니다.</p></div></div>
+          <div class="action"><em>4</em><div><strong>필요하면 릴 수정</strong><p><code>슬롯 수정 펼치기</code>에서 릴 사이 여백을 음수까지 입력해 겹치게 배치할 수 있습니다. 심볼 크기 변경 시 릴 컴프 너비와 높이도 함께 조정됩니다.</p></div></div>
+          <div class="warning"><code>선택 릴 섞기</code> 또는 <code>전체 릴 섞기</code>는 릴 심볼 구성을 바꿉니다. 기존 회차 저장값과 모션이 초기화될 수 있으므로 섞은 뒤 회차를 다시 저장하세요.</div>
+          <div class="status">상단이 <code>✓ 2 저장 완료</code>로 바뀌면 저장한 결과로 모션을 적용할 수 있습니다.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-block">
+          <div class="step-title"><b>3</b><h3>모션 적용</h3></div>
+          <div class="guide-grid">
+            <figure class="shot"><img class="panel-crop crop-motion" src="guide_assets/01_slot_build_03.png" alt="슬롯 만들기 3 모션 적용 패널" data-zoom><figcaption><span>실제 패널 · 3 모션 적용</span><span>클릭해서 확대</span></figcaption></figure>
+            <div class="actions">
+              <div class="action"><em>1</em><div><strong>스핀 타이밍 설정</strong><p>회전 시간, 릴별 순차 정지 간격, 속도감, 바운스, 정지 유지 시간을 설정합니다.</p></div></div>
+          <div class="action"><em>2</em><div><strong>바운스와 블러 선택</strong><p>바운스 스타일을 선택하고 <code>모션 블러 적용</code>을 켭니다. 블러는 릴의 회전 방향에 맞춰 적용됩니다.</p></div></div>
+              <div class="action"><em>3</em><div><strong>당첨 라인 설정</strong><p>필요한 경우 당첨 라인, 색상, 두께와 글로우를 설정합니다. 저장한 템플릿 결과를 기준으로 라인이 표시됩니다.</p></div></div>
+          <div class="action"><em>4</em><div><strong>모션 적용</strong><p>파란 <code>모션 적용</code> 버튼을 누릅니다. 모든 릴에 같은 회전 속도감이 적용되고, 저장한 회차 순서대로 정지합니다.</p></div></div>
+          <div class="note">다시 설정하려면 <code>적용된 모션 리셋</code>을 누른 뒤 값을 변경해 재적용합니다. 메인 컴프 길이를 변경한 경우 릴 컴프와 내부 레이어 길이도 적용 시 함께 동기화됩니다.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="video"><h3>슬롯 만들기 영상 가이드</h3><p>심볼 선택부터 생성, 회차 결과 저장, 모션 적용까지 실제 작업 흐름을 영상으로 확인할 수 있습니다.</p><video controls preload="metadata" playsinline><source src="guide_assets/BX_AE_TOOLBOX_가이드영상.mp4" type="video/mp4">이 브라우저에서는 영상을 재생할 수 없습니다.</video><small>HTML과 <code>guide_assets</code> 폴더를 함께 전달해야 다른 컴퓨터에서도 영상이 재생됩니다.</small></div>
+      </section>
+
+      <section id="brand">
+        <div class="section-head"><div class="num">2</div><div><h2>로고/문구</h2><p>선택한 컴프에 로고와 디스클레이머를 같은 기준으로 삽입합니다.</p></div></div>
+        <div class="guide-grid"><figure class="shot"><img class="panel-crop crop-brand" src="guide_assets/02_brand_logo_disclaimer.png" alt="로고 문구 패널" data-zoom><figcaption><span>실제 로고/문구 패널</span><span>클릭해서 확대</span></figcaption></figure><div class="actions">
+          <div class="action"><em>1</em><div><strong>대상 컴프 선택</strong><p>프로젝트 패널에서 적용할 컴프를 하나 이상 선택합니다.</p></div></div>
+          <div class="action"><em>2</em><div><strong>로고 설정</strong><p>기본 로고 또는 커스텀 로고를 선택하고 폭, 여백, X·Y 오프셋을 설정합니다. 커스텀 로고는 대상 컴프 규격에 맞는 파일을 사용합니다.</p></div></div>
+          <div class="action"><em>3</em><div><strong>문구 설정</strong><p>기본 문구 또는 커스텀 문구를 선택하고 글자 크기, 하단 여백, X 오프셋과 폰트를 지정합니다.</p></div></div>
+          <div class="action"><em>4</em><div><strong>선택 컴프에 삽입</strong><p>파란 버튼을 눌러 선택한 모든 컴프에 적용합니다. 로고 또는 문구만 사용할 때는 필요 없는 항목의 체크를 끕니다.</p></div></div>
+        </div></div>
+      </section>
+
+      <section id="comp">
+        <div class="section-head"><div class="num">3</div><div><h2>컴프 설정</h2><p>선택한 여러 컴프의 규격을 한 번에 변경합니다.</p></div></div>
+        <div class="guide-grid"><figure class="shot"><img class="panel-crop crop-comp" src="guide_assets/03_comp_settings.png" alt="컴프 설정 패널" data-zoom><figcaption><span>실제 컴프 설정 패널</span><span>클릭해서 확대</span></figcaption></figure><div class="actions">
+          <div class="action"><em>1</em><div><strong>컴프 선택</strong><p>프로젝트 패널에서 규격을 변경할 컴프를 선택합니다.</p></div></div>
+          <div class="action"><em>2</em><div><strong>프리셋 또는 값 설정</strong><p>저장된 프리셋을 선택하거나 해상도, 프레임레이트, 길이, 시작 타임코드를 직접 입력합니다.</p></div></div>
+          <div class="action"><em>3</em><div><strong>변경 항목 체크</strong><p>실제로 바꿀 항목만 체크합니다. 체크하지 않은 속성은 기존 값이 유지됩니다.</p></div></div>
+          <div class="action"><em>4</em><div><strong>선택 컴프에 적용</strong><p>파란 버튼을 눌러 적용합니다. 자주 사용하는 조합은 상단 <code>저장</code>으로 프리셋에 추가할 수 있습니다.</p></div></div>
+          <div class="warning">시작 타임코드는 <code>00:00:00:00</code> 형식으로 입력합니다.</div>
+        </div></div>
+      </section>
+
+      <section id="collect">
+        <div class="section-head"><div class="num">4</div><div><h2>콜렉트</h2><p>선택한 최종 컴프와 연결된 소스를 전달용 폴더로 모읍니다.</p></div></div>
+        <div class="guide-grid"><figure class="shot"><img class="panel-crop crop-collect" src="guide_assets/04_collect.png" alt="콜렉트 패널" data-zoom><figcaption><span>실제 콜렉트 패널</span><span>클릭해서 확대</span></figcaption></figure><div class="actions">
+          <div class="action"><em>1</em><div><strong>원본 프로젝트 저장</strong><p>콜렉트 전 현재 AEP를 저장합니다. 저장되지 않은 프로젝트에서는 실행할 수 없습니다.</p></div></div>
+          <div class="action"><em>2</em><div><strong>최종 컴프 선택</strong><p>프로젝트 패널에서 전달할 컴프를 선택하고 패널의 <code>선택된 컴프</code> 개수를 확인합니다.</p></div></div>
+          <div class="action"><em>3</em><div><strong>콜렉트 실행</strong><p>파란 <code>콜렉트</code> 버튼을 누르고 확인창에서 계속합니다. AE 기본 콜렉트 창에서 최종 저장 경로를 한 번 선택합니다.</p></div></div>
+          <div class="status">콜렉트는 임시 사본에서 실행된 뒤 원본 프로젝트를 다시 엽니다.</div>
+          <div class="warning danger">작업 중인 프로젝트를 반드시 먼저 저장하세요. 버튼이 회색이면 프로젝트 저장 여부와 컴프 선택 상태를 확인합니다.</div>
+        </div></div>
+      </section>
+
+      <section id="resize">
+        <div class="section-head"><div class="num">5</div><div><h2>리사이즈</h2><p>선택 콘텐츠의 실제 영역에 맞춰 컴프 크기와 위치를 조정합니다.</p></div></div>
+        <div class="guide-grid"><figure class="shot"><img class="panel-crop crop-resize" src="guide_assets/05_resize.png" alt="리사이즈 패널" data-zoom><figcaption><span>실제 리사이즈 패널</span><span>클릭해서 확대</span></figcaption></figure><div class="actions">
+          <div class="action"><em>1</em><div><strong>콘텐츠 선택</strong><p>레이어를 선택하면 선택 콘텐츠만 측정합니다. 선택이 없으면 활성 컴프의 전체 콘텐츠를 기준으로 합니다.</p></div></div>
+          <div class="action"><em>2</em><div><strong>여백과 미리보기 확인</strong><p>여백을 입력하고 패널 미리보기에서 현재 영역과 변경될 컴프 크기를 확인합니다.</p></div></div>
+          <div class="action"><em>3</em><div><strong>콘텐츠에 맞추기</strong><p>파란 버튼을 누르면 컴프 크기가 변경되고 콘텐츠가 새 컴프의 중앙으로 이동합니다. 키프레임과 부모 관계가 있는 레이어의 위치도 함께 보정됩니다.</p></div></div>
+          <div class="status">완료 상태에서 변경된 가로×세로 크기를 확인할 수 있습니다.</div>
+        </div></div>
+        <div class="mini-grid"><figure><img src="guide_assets/05_resize_before_comp.png" alt="리사이즈 전" data-zoom><figcaption><strong>실행 전</strong> · 기존 컴프 안의 콘텐츠 위치</figcaption></figure><figure><img class="resize-example-crop" src="guide_assets/05_resize_preview.png" alt="리사이즈 미리보기" data-zoom><figcaption><strong>미리보기</strong> · 선택 콘텐츠 기준 변경 영역</figcaption></figure><figure><img class="resize-example-crop" src="guide_assets/07_resize_result_panel.png" alt="리사이즈 결과 패널" data-zoom><figcaption><strong>적용 완료</strong> · 변경된 컴프 크기 표시</figcaption></figure><figure><img src="guide_assets/05_resize_after_comp.png" alt="리사이즈 후" data-zoom><figcaption><strong>결과</strong> · 콘텐츠가 새 컴프 중앙에 배치</figcaption></figure></div>
+      </section>
+
+      <section id="organize">
+        <div class="section-head"><div class="num">6</div><div><h2>소스 정리</h2><p>프로젝트 패널의 컴프와 소스를 표준 폴더로 분류합니다.</p></div></div>
+        <div class="guide-grid"><figure class="shot"><img class="panel-crop crop-organize" src="guide_assets/06_organize.png" alt="소스 정리 패널" data-zoom><figcaption><span>실제 소스 정리 패널</span><span>클릭해서 확대</span></figcaption></figure><div class="actions">
+          <div class="action"><em>1</em><div><strong>전체 정리</strong><p>폴더 구조 생성 · 컴프 분류 · 소스 분류 일괄 실행</p></div></div>
+          <div class="action"><em>2</em><div><strong>개별 정리</strong><p>폴더 구조 만들기 · 컴프 정리 · 소스 정리 선택 실행</p></div></div>
+          <div class="folder-map" aria-label="소스 정리 결과 폴더 구조">
+            <div class="folder-root">프로젝트 루트</div>
+            <div class="folder-branch">
+              <div class="folder-group">
+                <div class="folder-name">01_Comp</div>
+                <div class="folder-items">
+                  <div class="folder-item"><b>메인 컴프</b><span><code>DUC_날짜...</code> 형식 컴프 이동</span></div>
+                  <div class="folder-item"><b>sub comp</b><span>그 외 모든 컴프 이동</span></div>
+                </div>
+              </div>
+              <div class="folder-group">
+                <div class="folder-name">02_Source</div>
+                <div class="folder-items">
+                  <div class="folder-item"><b>img</b><span>JPG · JPEG · PSD · AI · TIF · TIFF · BMP · WEBP · PSD 폴더 · 이름 끝 <code>Layers</code> 폴더</span></div>
+                  <div class="folder-item"><b>png</b><span>PNG 이미지</span></div>
+                  <div class="folder-item"><b>mp4_mov</b><span>MP4 · MOV · AVI · MKV · WEBM · GIF 영상</span></div>
+                  <div class="folder-item"><b>sound</b><span>WAV · MP3 · AAC · M4A · OGG · FLAC 오디오</span></div>
+                  <div class="folder-item"><b>AE</b><span>가져온 AEP 프로젝트 폴더</span></div>
+                  <div class="folder-item"><b>etc</b><span>Solid 소스 · Mister Horse <code>fc footage</code> 폴더 · 기타 파일</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="folder-legend"><span>컴프 자동 분류</span><span>확장자 기준 분류</span><span>PSD Layers 포함</span><span>Solid → etc</span></div>
+          </div>
+        </div></div>
+      </section>
+
+      <section id="faq">
+        <div class="section-head"><div class="num">?</div><div><h2>문제 해결</h2><p>작업자가 자주 확인해야 하는 항목입니다.</p></div></div>
+        <div class="faq"><article><h3>슬롯 생성이 비활성화됨</h3><p>프로젝트 패널에서 심볼 에셋을 선택하고 상단 초록색 상태를 확인합니다.</p></article><article><h3>모션 적용이 비활성화됨</h3><p>설정한 회차 수만큼 모든 회차가 <code>저장됨</code>인지 확인합니다.</p></article><article><h3>회차 심볼이 예상과 다름</h3><p>해당 회차를 선택해 저장 결과를 확인합니다. 릴을 섞은 뒤라면 회차를 리셋하고 다시 저장합니다.</p></article><article><h3>모션을 다시 만들고 싶음</h3><p><code>적용된 모션 리셋</code>을 실행한 뒤 타이밍 값을 변경해 재적용합니다.</p></article><article><h3>콜렉트 버튼이 비활성화됨</h3><p>프로젝트를 저장하고 프로젝트 패널에서 최종 컴프를 선택합니다.</p></article><article><h3>최신 패널이 보이지 않음</h3><p>패널을 닫고 After Effects를 재시작합니다.</p></article></div>
+      </section>
+      <footer class="footer">BX AE Toolbox · 최종 사용자 가이드</footer>
+    </div>
+  </main>
+</div>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="패널 이미지 확대"><button type="button" aria-label="닫기">×</button><img alt="확대된 패널 화면"></div>
+<script>
+  (function(){
+    var nav=[].slice.call(document.querySelectorAll('#nav a'));var sections=nav.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
+    function sync(){var y=window.scrollY+150,active=sections[0];sections.forEach(function(s){if(s.offsetTop<=y)active=s;});nav.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+active.id);});}
+    window.addEventListener('scroll',sync,{passive:true});sync();
+    var box=document.getElementById('lightbox'),large=box.querySelector('img');document.querySelectorAll('[data-zoom]').forEach(function(img){img.addEventListener('click',function(){large.src=img.src;large.alt=img.alt;box.classList.add('open');});});
+    function close(){box.classList.remove('open');large.removeAttribute('src');}box.querySelector('button').addEventListener('click',close);box.addEventListener('click',function(e){if(e.target===box)close();});document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  })();
+</script>
+</body>
+</html>
