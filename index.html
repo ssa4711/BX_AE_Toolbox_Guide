@@ -38,6 +38,8 @@
     @media(prefers-reduced-motion:reduce){.tool-map a,.tool-map a small{transition:none}.tool-map a:hover,.tool-map a:focus-visible,.tool-map a:active{transform:none}}
     /* Source organization map */
     .folder-map{display:grid;gap:10px;padding:14px;border:1px solid var(--line);border-radius:6px;background:#fff}.folder-root{display:flex;align-items:center;gap:8px;font-weight:800}.folder-root:before,.folder-name:before{content:"";display:inline-block;width:14px;height:10px;border-radius:2px;background:#f1b83b;box-shadow:0 -3px 0 -1px #d89b24}.folder-branch{margin-left:7px;padding-left:18px;border-left:2px solid #d8e1eb}.folder-group{position:relative;margin:8px 0}.folder-group:before{content:"";position:absolute;left:-20px;top:13px;width:14px;border-top:2px solid #d8e1eb}.folder-name{display:inline-flex;align-items:center;gap:8px;padding:5px 9px;border-radius:4px;background:#eef5fd;color:#155fae;font-weight:800}.folder-name.sub{background:#f0f2f5;color:#4f5964}.folder-items{display:grid;gap:6px;margin:8px 0 0 22px}.folder-item{display:grid;grid-template-columns:minmax(72px,110px) minmax(0,1fr);gap:10px;align-items:start;padding:7px 9px;border-left:3px solid #a8ccef;background:#f7faff}.folder-item b{color:#155fae;font-size:12px}.folder-item span{color:var(--muted);font-size:12px;line-height:1.5}.folder-item code{padding:1px 4px;border-radius:3px;background:#e7eef6;color:#34495e;font-family:inherit;font-size:11px}.folder-legend{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}.folder-legend span{padding:4px 7px;border:1px solid #d7e0e9;border-radius:4px;background:#f7f8fa;color:#59636e;font-size:11px}@media(max-width:620px){.folder-map{padding:11px}.folder-branch{padding-left:14px}.folder-group:before{left:-16px;width:10px}.folder-items{margin-left:12px}.folder-item{grid-template-columns:1fr;gap:2px}}
+    /* Installation wizard */
+    .tool-map .install-link{grid-column:1/-1;min-height:66px;border-color:#b8d3ef;background:#edf6ff}.install-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.install-card{margin:0;padding:9px;border:1px solid var(--line);border-radius:7px;background:#fff;box-shadow:0 3px 12px rgba(34,45,58,.035)}.install-card img{display:block;width:100%;height:auto;border:1px solid #d9dee4;border-radius:4px;cursor:zoom-in}.install-card figcaption{display:grid;grid-template-columns:28px minmax(0,1fr);gap:9px;align-items:start;padding:12px 3px 4px}.install-card figcaption b{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#dbeaff;color:#1466ba}.install-card strong{display:block;line-height:1.4}.install-card span{display:block;margin-top:3px;color:var(--muted);font-size:12px;line-height:1.55}@media(max-width:980px){.install-grid{grid-template-columns:1fr}.install-card{max-width:620px}}@media(max-width:540px){.tool-map .install-link{grid-column:auto}}
   </style>
 </head>
 <body>
@@ -46,7 +48,7 @@
     <div class="brand"><div class="brand-mark">BX</div><div><strong>AE Toolbox</strong><small>최종 사용자 가이드</small></div></div>
     <div class="nav-label">기능</div>
     <nav class="nav" id="nav">
-      <a href="#overview" class="active"><b>0</b><span>한눈에 보기</span></a>
+      <a href="#install" class="active"><b>0</b><span>설치하기</span></a>
       <a href="#slot"><b>1</b><span>슬롯 만들기</span></a>
       <a href="#brand"><b>2</b><span>로고/문구</span></a>
       <a href="#comp"><b>3</b><span>컴프 설정</span></a>
@@ -63,6 +65,7 @@
         <span class="eyebrow">WORKFLOW GUIDE</span>
         <h1>BX AE TOOLBOX<br></h1>
         <div class="tool-map">
+          <a class="install-link" href="#install"><b>설치하기</b><small>설치 파일 실행 · After Effects 재시작 · 패널 열기</small></a>
           <a href="#slot"><b>슬롯 만들기</b><small>릴 생성 · 회차 결과 · 스핀 모션</small></a>
           <a href="#brand"><b>로고/문구</b><small>로고와 디스클레이머 일괄 삽입</small></a>
           <a href="#comp"><b>컴프 설정</b><small>해상도 · FPS · 길이 · 타임코드</small></a>
@@ -70,6 +73,17 @@
           <a href="#resize"><b>리사이즈</b><small>콘텐츠 기준 컴프 크기 변경</small></a>
           <a href="#organize"><b>소스 정리</b><small>컴프와 에셋 자동 분류</small></a>
         </div>
+      </section>
+
+      <section id="install">
+        <div class="section-head"><div class="num">0</div><div><h2>설치 마법사</h2><p>설치 파일 하나로 지원되는 After Effects 버전에 BX AE Toolbox를 설치합니다.</p></div></div>
+        <div class="warning" style="margin-bottom:16px"><strong>설치 전 확인</strong> · 작업 중인 프로젝트를 저장하고 After Effects를 완전히 종료합니다.</div>
+        <div class="install-grid">
+          <figure class="install-card"><img src="guide_assets/BX_AE_Toolbox_Installer_01.png" alt="BX AE Toolbox 설치 준비 화면" data-zoom><figcaption><b>1</b><div><strong>설치 파일 실행</strong><span><code>BX_AE_Toolbox_Installer.exe</code>를 실행합니다. Windows 권한 확인 창이 나타나면 허용한 뒤 <code>설치</code>를 선택합니다.</span></div></figcaption></figure>
+          <figure class="install-card"><img src="guide_assets/BX_AE_Toolbox_Installer_02.png" alt="BX AE Toolbox 설치 완료 안내 화면" data-zoom><figcaption><b>2</b><div><strong>설치 완료 확인</strong><span>설치된 After Effects 버전을 확인하고 <code>확인</code>을 선택합니다.</span></div></figcaption></figure>
+          <figure class="install-card"><img src="guide_assets/BX_AE_Toolbox_Installer_03.png" alt="BX AE Toolbox 설치 마법사 완료 화면" data-zoom><figcaption><b>3</b><div><strong>After Effects에서 열기</strong><span><code>마침</code>을 선택한 뒤 After Effects를 실행하고 <code>창(Window) → BX_AE_Toolbox.jsx</code>를 엽니다.</span></div></figcaption></figure>
+        </div>
+        <div class="status" style="margin-top:16px">이후 새 버전이 배포되면 패널의 <code>업데이트</code> 탭에서 확인하고 설치할 수 있습니다.</div>
       </section>
 
       <section id="slot">
